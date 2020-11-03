@@ -73,7 +73,7 @@ public class DerelictGrassTowerStructure extends AbstractTowerStructure {
                 for (RegistryObject<Structure<?>> ro : TowerStructuresRegistry.STRUCTURE_FEATURES.getEntries()) {
                     Structure<?> otherStructure = ro.get();
                     if (!structure.equals(otherStructure)) {
-                        ChunkPos otherStructurePos = otherStructure.func_236392_a_(Objects.requireNonNull(generator.func_235957_b_().func_236197_a_(otherStructure)), seed, rand, k, l);
+                        ChunkPos otherStructurePos = otherStructure.getChunkPosForStructure(Objects.requireNonNull(generator.func_235957_b_().func_236197_a_(otherStructure)), seed, rand, k, l);
                         if (k == otherStructurePos.x && l == otherStructurePos.z) {
                             return true;
                         }

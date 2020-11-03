@@ -26,8 +26,8 @@ public class TowerStructuresRegistry {
 
     private static <T extends Structure<?>> RegistryObject<T> register(String name, T structure) {
         TowersOfTheWild.LOGGER.info(name + " structure registered");
-        Structure.field_236365_a_.put(TowersOfTheWild.MOD_ID + ":" + name, structure);
-        Structure.field_236385_u_.put(structure, GenerationStage.Decoration.SURFACE_STRUCTURES);
+        Structure.NAME_STRUCTURE_BIMAP.put(TowersOfTheWild.MOD_ID + ":" + name, structure);
+        Structure.STRUCTURE_DECORATION_STAGE_MAP.put(structure, GenerationStage.Decoration.SURFACE_STRUCTURES);
 
         return STRUCTURE_FEATURES.register(name, () -> structure);
     }
