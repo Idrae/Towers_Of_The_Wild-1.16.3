@@ -1,0 +1,3 @@
+- Prevents the entire tower area from spawning on rivers and blacklisted biomes.
+- Ocean towers now cannot spawn above a certain sea ground level (38)
+- Decreased slightly the tower rarity to compensate the changes above

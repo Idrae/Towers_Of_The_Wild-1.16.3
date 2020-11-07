@@ -10,6 +10,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.jigsaw.JigsawManager;
@@ -44,6 +45,21 @@ public class OceanWarmTowerStructure extends AbstractTowerStructure{
     @Override
     public int getSeparation() {
         return TowersOfTheWildConfig.oceanRarity / 3;
+    }
+
+    // can generate
+    @Override
+    protected boolean func_230363_a_(ChunkGenerator generator, BiomeProvider biomeProvider, long seed, SharedSeedRandom rand, int chunkX, int chunkZ, Biome biome, ChunkPos pos, VillageConfig config) {
+        if (isTerrainFlat(generator, chunkX, chunkZ)) {
+            if (!alreadyIsTower(generator, this, seed, rand, chunkX, chunkZ)) {
+
+                int xStart = chunkX * 16;
+                int zStart = chunkZ * 16;
+                int startHeight = generator.getHeight(xStart, zStart, Heightmap.Type.OCEAN_FLOOR_WG);
+                return startHeight <= 38;
+            }
+        }
+        return false;
     }
 
     @Override

@@ -61,8 +61,8 @@ public class TowersOfTheWildConfig {
         public CommonConfig(ForgeConfigSpec.Builder builder) {
             builder.push("towers");
             towerRarity = builder
-                    .comment("How rarely the towers will spawn (low: common, high: rare). Default: 24")
-                    .defineInRange("towerRarity", 24, 3, 200);
+                    .comment("How rarely the towers will spawn (low: common, high: rare). Default: 20")
+                    .defineInRange("towerRarity", 20, 3, 200);
             derelictTowerRarity = builder
                     .comment("How rarely the derelict towers will spawn (low: common, high: rare). Default: 72")
                     .defineInRange("derelictTowerRarity", 72, 3, 200);

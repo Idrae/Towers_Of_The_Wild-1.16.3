@@ -41,13 +41,21 @@ public abstract class AbstractTowerStructure extends JigsawStructure {
 
     public abstract int getSize();
 
-
     // can generate
     @Override
     protected boolean func_230363_a_(ChunkGenerator generator, BiomeProvider biomeProvider, long seed, SharedSeedRandom rand, int chunkX, int chunkZ, Biome biome, ChunkPos pos, VillageConfig config) {
         if (isTerrainFlat(generator, chunkX, chunkZ)) {
             if (!alreadyIsTower(generator, this, seed, rand, chunkX, chunkZ)) {
-                return true;
+                // Check the entire size of the structure for Blacklisted Biomes
+                for(Biome biome1 : biomeProvider.getBiomes(chunkX * 16 + getSize() / 2, generator.getSeaLevel(), chunkZ * 16 + getSize() / 2, getSize() * 16)) {
+                    if (biome1.getRegistryName() != null) {
+                        if (TowersOfTheWildConfig.biomeBlackList.contains(biome1.getRegistryName().toString())
+                                || TowersOfTheWildConfig.allModBiomesBlackList.contains(biome1.getRegistryName().getNamespace())) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
             }
         }
         return false;
