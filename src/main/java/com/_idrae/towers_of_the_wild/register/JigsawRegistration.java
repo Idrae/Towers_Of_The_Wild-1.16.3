@@ -18,8 +18,9 @@ public class JigsawRegistration {
     }
 
     public static void registerPostSetup(JigsawPattern pattern, DynamicRegistries registries) {
-        registries.getRegistry(Registry.JIGSAW_POOL_KEY).register(RegistryKey.getOrCreateKey(Registry.JIGSAW_POOL_KEY, pattern.getName()), pattern, Lifecycle.stable());
+        if (!registries.getRegistry(Registry.JIGSAW_POOL_KEY).containsKey(pattern.getName())) {
+            registries.getRegistry(Registry.JIGSAW_POOL_KEY).register(RegistryKey.getOrCreateKey(Registry.JIGSAW_POOL_KEY, pattern.getName()), pattern, Lifecycle.stable());
+        }
     }
-
 
 }

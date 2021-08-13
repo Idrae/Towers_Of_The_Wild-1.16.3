@@ -25,7 +25,7 @@ public class OceanWarmTowerPools {
                     new ResourceLocation(TowersOfTheWild.MOD_ID, "ocean_warm_bottom"),
                     new ResourceLocation("empty"),
                     ImmutableList.of(
-                            Pair.of(JigsawPiece.func_242851_a(TowersOfTheWild.MOD_ID + ":ocean_warm/ocean_warm_tower_bottom", ProcessorLists.field_244101_a), 1)),
+                            Pair.of(JigsawPiece.func_242851_a(TowersOfTheWild.MOD_ID + ":ocean_warm/ocean_warm_tower_bottom", ProcessorLists.EMPTY), 1)),
                     JigsawPattern.PlacementBehaviour.RIGID);
 
     public static JigsawPattern TOP =
@@ -37,7 +37,7 @@ public class OceanWarmTowerPools {
                                     ModList.get().isLoaded("waystones") && TowersOfTheWildConfig.waystonesCompat ?
                                             TowersOfTheWild.MOD_ID + ":ocean_warm/waystone_ocean_warm_tower_top" :
                                             TowersOfTheWild.MOD_ID + ":ocean_warm/ocean_warm_tower_top",
-                                    ProcessorLists.field_244101_a), 1)),
+                                    ProcessorLists.EMPTY), 1)),
                     JigsawPattern.PlacementBehaviour.RIGID);
 
 }
