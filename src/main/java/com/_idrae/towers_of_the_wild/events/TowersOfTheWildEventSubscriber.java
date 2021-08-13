@@ -4,10 +4,10 @@ import com._idrae.towers_of_the_wild.config.TowersOfTheWildConfig;
 import com._idrae.towers_of_the_wild.register.TowerStructureFeaturesRegistry;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
 
@@ -19,15 +19,23 @@ public class TowersOfTheWildEventSubscriber {
 
         ResourceLocation name = event.getName();
         Biome.Category category = event.getCategory();
+        boolean isPrimalWinterLoaded = ModList.get().isLoaded("primalwinter");
 
-        if (category.equals(Biome.Category.JUNGLE)) {
-            event.getGeneration().withStructure(TowerStructureFeaturesRegistry.JUNGLE_TOWER_FEATURE);
-            return;
-        }
+        if (!isPrimalWinterLoaded) {
+            if (category.equals(Biome.Category.JUNGLE)) {
+                event.getGeneration().withStructure(TowerStructureFeaturesRegistry.JUNGLE_TOWER_FEATURE);
+                return;
+            }
 
-        if (category.equals(Biome.Category.ICY)) {
-            event.getGeneration().withStructure(TowerStructureFeaturesRegistry.ICE_TOWER_FEATURE);
-            return;
+            if (category.equals(Biome.Category.ICY)) {
+                event.getGeneration().withStructure(TowerStructureFeaturesRegistry.ICE_TOWER_FEATURE);
+                return;
+            }
+        } else {
+            if (!category.equals(Biome.Category.OCEAN)) {
+                event.getGeneration().withStructure(TowerStructureFeaturesRegistry.ICE_TOWER_FEATURE);
+                return;
+            }
         }
 
         if (TowersOfTheWildConfig.spawnOceanTowers) {

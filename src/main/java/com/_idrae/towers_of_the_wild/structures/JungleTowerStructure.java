@@ -1,15 +1,10 @@
 package com._idrae.towers_of_the_wild.structures;
 
-import com._idrae.towers_of_the_wild.TowersOfTheWild;
-import com._idrae.towers_of_the_wild.structures.pieces.DerelictGrassTowerPools;
 import com._idrae.towers_of_the_wild.structures.pieces.JungleTowerPools;
-import com._idrae.towers_of_the_wild.structures.pieces.OceanWarmTowerPools;
 import com.mojang.serialization.Codec;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.DynamicRegistries;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.NoFeatureConfig;

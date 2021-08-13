@@ -1,25 +1,18 @@
 package com._idrae.towers_of_the_wild.structures;
 
-import com._idrae.towers_of_the_wild.TowersOfTheWild;
 import com._idrae.towers_of_the_wild.config.TowersOfTheWildConfig;
 import com._idrae.towers_of_the_wild.register.TowerStructuresRegistry;
-import com._idrae.towers_of_the_wild.structures.pieces.TowerPools;
 import com.mojang.serialization.Codec;
-import net.minecraft.util.Rotation;
 import net.minecraft.util.SharedSeedRandom;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
-import net.minecraft.util.registry.DynamicRegistries;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
-import net.minecraft.world.gen.feature.jigsaw.JigsawManager;
-import net.minecraft.world.gen.feature.structure.*;
-import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.gen.feature.structure.Structure;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.Objects;
@@ -32,7 +25,9 @@ public abstract class AbstractTowerStructure extends Structure<NoFeatureConfig> 
 
     public int getDistance() {
         return TowersOfTheWildConfig.rarity;
-    };
+    }
+
+    ;
 
     public int getSeparation() {
         return TowersOfTheWildConfig.rarity / 3;
@@ -48,7 +43,7 @@ public abstract class AbstractTowerStructure extends Structure<NoFeatureConfig> 
         if (isTerrainFlat(generator, chunkX, chunkZ)) {
             if (!alreadyIsTower(generator, this, seed, rand, chunkX, chunkZ)) {
                 // Check the entire size of the structure for Blacklisted Biomes
-                for(Biome biome1 : biomeProvider.getBiomes(chunkX * 16 + getSize() / 2, generator.getSeaLevel(), chunkZ * 16 + getSize() / 2, getSize() * 16)) {
+                for (Biome biome1 : biomeProvider.getBiomes(chunkX * 16 + getSize() / 2, generator.getSeaLevel(), chunkZ * 16 + getSize() / 2, getSize() * 16)) {
                     if (biome1.getRegistryName() != null) {
                         if (TowersOfTheWildConfig.biomeBlackList.contains(biome1.getRegistryName().toString())
                                 || TowersOfTheWildConfig.allModBiomesBlackList.contains(biome1.getRegistryName().getNamespace())) {

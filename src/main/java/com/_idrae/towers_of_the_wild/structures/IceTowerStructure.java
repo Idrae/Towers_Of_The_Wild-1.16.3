@@ -1,19 +1,18 @@
 package com._idrae.towers_of_the_wild.structures;
 
-import com._idrae.towers_of_the_wild.TowersOfTheWild;
 import com._idrae.towers_of_the_wild.structures.pieces.IceTowerPools;
-import com._idrae.towers_of_the_wild.structures.pieces.OceanWarmTowerPools;
 import com.mojang.serialization.Codec;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.registry.DynamicRegistries;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.ChunkGenerator;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.jigsaw.JigsawManager;
-import net.minecraft.world.gen.feature.structure.*;
+import net.minecraft.world.gen.feature.structure.AbstractVillagePiece;
+import net.minecraft.world.gen.feature.structure.Structure;
+import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.feature.structure.VillageConfig;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class IceTowerStructure extends AbstractTowerStructure {

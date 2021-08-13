@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.world.gen.feature.jigsaw.JigsawPattern;
 import net.minecraft.world.gen.feature.jigsaw.JigsawPiece;
-import net.minecraft.world.gen.feature.template.*;
+import net.minecraft.world.gen.feature.template.ProcessorLists;
 import net.minecraftforge.fml.ModList;
 
 public class TowerPools {

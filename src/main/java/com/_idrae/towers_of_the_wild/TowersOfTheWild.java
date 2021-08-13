@@ -4,8 +4,6 @@ import com._idrae.towers_of_the_wild.config.TowersOfTheWildConfig;
 import com._idrae.towers_of_the_wild.register.TowerStructureFeaturesRegistry;
 import com._idrae.towers_of_the_wild.register.TowerStructuresRegistry;
 import com._idrae.towers_of_the_wild.setup.WorldSetup;
-import com._idrae.towers_of_the_wild.structures.OceanWarmTowerStructure;
-import com._idrae.towers_of_the_wild.structures.pieces.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -17,8 +15,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod("towers_of_the_wild")
-public class TowersOfTheWild
-{
+public class TowersOfTheWild {
     public static final String MOD_ID = "towers_of_the_wild";
     public static final Logger LOGGER = LogManager.getLogger();
 

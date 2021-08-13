@@ -1,6 +1,5 @@
 package com._idrae.towers_of_the_wild.setup;
 
-import com._idrae.towers_of_the_wild.register.TowerStructureFeaturesRegistry;
 import com._idrae.towers_of_the_wild.register.TowerStructuresRegistry;
 import com._idrae.towers_of_the_wild.structures.AbstractTowerStructure;
 import com.google.common.collect.ImmutableMap;
