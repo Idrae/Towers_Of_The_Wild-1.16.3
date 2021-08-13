@@ -20,14 +20,13 @@ public class IceTowerPools {
         JigsawRegistration.registerPostSetup(TOP, registries);
     }
 
-    public static JigsawPattern BOTTOM = JigsawRegistration.register(
+    public static JigsawPattern BOTTOM =
             new JigsawPattern(
                     new ResourceLocation(TowersOfTheWild.MOD_ID, "ice_bottom"),
                     new ResourceLocation("empty"),
                     ImmutableList.of(
                             Pair.of(JigsawPiece.func_242851_a(TowersOfTheWild.MOD_ID + ":ice/ice_tower_bottom", ProcessorLists.field_244101_a), 1)),
-                    JigsawPattern.PlacementBehaviour.RIGID)
-    );
+                    JigsawPattern.PlacementBehaviour.RIGID);
 
     public static JigsawPattern TOP =
             new JigsawPattern(

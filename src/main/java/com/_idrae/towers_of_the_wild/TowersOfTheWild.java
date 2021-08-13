@@ -1,6 +1,7 @@
 package com._idrae.towers_of_the_wild;
 
 import com._idrae.towers_of_the_wild.config.TowersOfTheWildConfig;
+import com._idrae.towers_of_the_wild.register.TowerStructureFeaturesRegistry;
 import com._idrae.towers_of_the_wild.register.TowerStructuresRegistry;
 import com._idrae.towers_of_the_wild.setup.WorldSetup;
 import com._idrae.towers_of_the_wild.structures.OceanWarmTowerStructure;
@@ -31,15 +32,7 @@ public class TowersOfTheWild
 
     private void setup(final FMLCommonSetupEvent event) {
         WorldSetup.setup();
-        /*
-        TowerPools.init();
-        IceTowerPools.init();
-        JungleTowerPools.init();
-        DerelictTowerPools.init();
-        DerelictGrassTowerPools.init();
-        OceanTowerPools.init();
-        OceanWarmTowerPools.init();
-
-         */
+        TowerStructureFeaturesRegistry.registerJigsawPatterns();
+        TowerStructureFeaturesRegistry.registerStructureFeatures();
     }
 }

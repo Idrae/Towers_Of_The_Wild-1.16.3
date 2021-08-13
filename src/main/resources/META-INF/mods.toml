@@ -29,7 +29,7 @@ description='''
 Cool towers to enhance exploration!
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.examplemod]] #optional
+[[dependencies.towers_of_the_wild]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -41,7 +41,7 @@ Cool towers to enhance exploration!
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 # Here's another dependency
-[[dependencies.examplemod]]
+[[dependencies.towers_of_the_wild]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.16.3]"
