@@ -38,5 +38,12 @@ public class TowerStructureFeaturesRegistry {
         JigsawRegistration.register(IceTowerPools.BOTTOM);
         JigsawRegistration.register(DerelictTowerPools.BOTTOM);
         JigsawRegistration.register(DerelictGrassTowerPools.BOTTOM);
+        JigsawRegistration.register(TowerPools.TOP);
+        JigsawRegistration.register(OceanWarmTowerPools.TOP);
+        JigsawRegistration.register(OceanTowerPools.TOP);
+        JigsawRegistration.register(JungleTowerPools.TOP);
+        JigsawRegistration.register(IceTowerPools.TOP);
+        JigsawRegistration.register(DerelictTowerPools.TOP);
+        JigsawRegistration.register(DerelictGrassTowerPools.TOP);
     }
 }

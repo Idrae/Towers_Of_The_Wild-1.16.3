@@ -45,7 +45,6 @@ public class JungleTowerStructure extends AbstractTowerStructure {
         public void func_230364_a_(DynamicRegistries registries, ChunkGenerator generator, TemplateManager manager, int p_230364_4_, int p_230364_5_, Biome p_230364_6_, NoFeatureConfig villageConfig) {
             int i = p_230364_4_ * 16;
             int j = p_230364_5_ * 16;
-            JungleTowerPools.init(registries);
             BlockPos blockpos = new BlockPos(i, 0, j);
             JigsawManager.func_242837_a(registries, new VillageConfig(() -> JungleTowerPools.BOTTOM, 10), AbstractVillagePiece::new, generator, manager, blockpos, this.components, this.rand, false, true);
             this.recalculateStructureSize();

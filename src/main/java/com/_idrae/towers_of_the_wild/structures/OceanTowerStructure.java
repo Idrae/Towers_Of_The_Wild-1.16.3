@@ -80,7 +80,6 @@ public class OceanTowerStructure extends AbstractTowerStructure {
         public void func_230364_a_(DynamicRegistries registries, ChunkGenerator generator, TemplateManager manager, int p_230364_4_, int p_230364_5_, Biome p_230364_6_, NoFeatureConfig villageConfig) {
             int i = p_230364_4_ * 16;
             int j = p_230364_5_ * 16;
-            OceanTowerPools.init(registries);
             BlockPos blockpos = new BlockPos(i, generator.getHeight(i, j, Heightmap.Type.OCEAN_FLOOR_WG) - generator.getHeight(i, j, Heightmap.Type.WORLD_SURFACE_WG), j);
             JigsawManager.func_242837_a(registries, new VillageConfig(() -> OceanTowerPools.BOTTOM, 10), AbstractVillagePiece::new, generator, manager, blockpos, this.components, this.rand, false, true);
             this.recalculateStructureSize();

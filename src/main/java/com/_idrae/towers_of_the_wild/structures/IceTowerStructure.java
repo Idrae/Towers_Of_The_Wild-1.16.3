@@ -46,7 +46,6 @@ public class IceTowerStructure extends AbstractTowerStructure {
             int i = p_230364_4_ * 16;
             int j = p_230364_5_ * 16;
             BlockPos blockpos = new BlockPos(i, 0, j);
-            IceTowerPools.init(registries);
             JigsawManager.func_242837_a(registries, new VillageConfig(() -> IceTowerPools.BOTTOM, 10), AbstractVillagePiece::new, generator, manager, blockpos, this.components, this.rand, false, true);
             this.recalculateStructureSize();
 
