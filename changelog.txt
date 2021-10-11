@@ -1,5 +1,17 @@
 Changelog:
 
+2.1.0:
+
+- Fixed the jigsaw pattern registration duplication issue.
+- Resolved Minecraft complaining about empty template pools by registering the pools earlier.
+
+Technical Changelog:
+
+- Removed VillageConfig from towers. It is unnecessary.
+- Rewrite the registration process basically... It was just not correct.
+
+2.0.1:
+
 - Rebalanced the rarity of the towers.
 - Towers now do not spawn in the Nether or the End by default (no need to blacklist these dimensions).
 - Top half of derelict towers are now spawning at a height level matching the terrain.

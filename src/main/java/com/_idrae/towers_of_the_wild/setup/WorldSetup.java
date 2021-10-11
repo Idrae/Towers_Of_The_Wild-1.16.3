@@ -1,6 +1,5 @@
 package com._idrae.towers_of_the_wild.setup;
 
-import com._idrae.towers_of_the_wild.register.TowerStructureFeaturesRegistry;
 import com._idrae.towers_of_the_wild.register.TowerStructuresRegistry;
 import com._idrae.towers_of_the_wild.structures.AbstractTowerStructure;
 import com.google.common.collect.ImmutableMap;
@@ -22,7 +21,7 @@ public class WorldSetup {
                             .put(structure, new StructureSeparationSettings(structure.getDistance(), structure.getSeparation(), structure.getSeedModifier()))
                             .build();
 
-            DimensionSettings.field_242740_q.getStructures().field_236193_d_.put(structure, new StructureSeparationSettings(structure.getDistance(), structure.getSeparation(), structure.getSeedModifier()));
+            DimensionSettings.DEFAULT_SETTINGS.getStructures().field_236193_d_.put(structure, new StructureSeparationSettings(structure.getDistance(), structure.getSeparation(), structure.getSeedModifier()));
         }
 
 
